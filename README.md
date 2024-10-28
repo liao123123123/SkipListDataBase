@@ -1,60 +1,60 @@
-# ÇáÁ¿¼¶¼üÖµÐÍ´æ´¢ÒýÇæ(SkipListDataBase)
+# è½»é‡çº§é”®å€¼åž‹å­˜å‚¨æ•°æ®åº“(SkipListDataBase)
 
-ÊìÖªµÄ·Ç¹ØÏµÐÍÊý¾Ý¿âredis£¬ÆäºËÐÄ´æ´¢ÒýÇæµÄÊý¾Ý½á¹¹¾ÍÊÇÌø±í¡£±¾ÏîÄ¿ÊÇÒ»¸ö»ùÓÚÌø±íµÄÇáÁ¿¼¶¼üÖµ´æ´¢Êý¾Ý¿â¡£
-
-
-
-# Ö÷Òª½Ó¿Ú
-
-* insertElement£¨²åÈëÊý¾Ý£©
-* deleteElement£¨É¾³ýÊý¾Ý£©
-* searchElement£¨²éÑ¯Êý¾Ý£©
-* displayList£¨Õ¹Ê¾ÒÑ´æÊý¾Ý£©
-* dumpFile£¨Êý¾Ý´òÓ¡£©
-* loadFile£¨¼ÓÔØÊý¾Ý£©
-* size£¨·µ»ØÊý¾Ý¹æÄ££©
+ç†ŸçŸ¥çš„éžå…³ç³»åž‹æ•°æ®åº“redisï¼Œå…¶æ ¸å¿ƒå­˜å‚¨å¼•æ“Žçš„æ•°æ®ç»“æž„å°±æ˜¯è·³è¡¨ã€‚æœ¬é¡¹ç›®æ˜¯ä¸€ä¸ªåŸºäºŽè·³è¡¨çš„è½»é‡çº§é”®å€¼å­˜å‚¨æ•°æ®åº“ã€‚
 
 
 
-# ÏîÄ¿ÔËÐÐ
+# ä¸»è¦æŽ¥å£
 
-±àÒë´úÂë£º
+* insertElementï¼ˆæ’å…¥æ•°æ®ï¼‰
+* deleteElementï¼ˆåˆ é™¤æ•°æ®ï¼‰
+* searchElementï¼ˆæŸ¥è¯¢æ•°æ®ï¼‰
+* displayListï¼ˆå±•ç¤ºå·²å­˜æ•°æ®ï¼‰
+* dumpFileï¼ˆå¤–éƒ¨æ•°æ®æ‰“å°ï¼‰
+* loadFileï¼ˆåŠ è½½æ•°æ®ï¼‰
+* sizeï¼ˆè¿”å›žæ•°æ®è§„æ¨¡ï¼‰
+
+
+
+# é¡¹ç›®è¿è¡Œ
+
+ç¼–è¯‘ä»£ç ï¼š
 ```
-make                 // ±àÒë main.cpp
-./bin/main num     // numÎª×î´óÌø±íÊ÷¸ß£¨²»´óÓÚ10£©
+make                 // ç¼–è¯‘ main.cpp
+./bin/main num     // numä¸ºæœ€å¤§è·³è¡¨æ ‘é«˜ï¼ˆä¸å¤§äºŽ10ï¼‰
 ```
 
 
-²âÊÔ´úÂë£º
+æµ‹è¯•ä»£ç ï¼š
 ```
 sh stress_test_start.sh
 ```
 
-# ÐÔÄÜ
+# æ€§èƒ½
 
 
-## ²åÈë²Ù×÷£¨Insert£©
+## æ’å…¥æ“ä½œï¼ˆInsertï¼‰
 
-²ÉÓÃËæ»ú²åÈëÊý¾Ý²âÊÔ£º
+é‡‡ç”¨éšæœºæ’å…¥æ•°æ®æµ‹è¯•ï¼š
 
-ÎªÁË±ÜÃâÊµÑéÅ¼È»ÐÔ£ºÊµÑéÁËÊ®´ÎÈ¡Æ½¾ùÖµ£º
-|²åÈëÊý¾ÝÊýÄ¿/ÍòÌõ |ºÄÊ±/Ãë | 
+ä¸ºäº†é¿å…å®žéªŒå¶ç„¶æ€§ï¼šå®žéªŒäº†åæ¬¡å–å¹³å‡å€¼ï¼š
+|æ’å…¥æ•°æ®æ•°ç›®/ä¸‡æ¡ |è€—æ—¶/ç§’ | 
 |-----|----------|
 |   10  |  0.389503 |
 |   50  |  2.40938  |
 |   100 |  5.29607  |
 
 
-Ã¿Ãë¿É´¦ÀíÐ´ÇëÇóÊý£¨QPS£©: 19.77w
+æ¯ç§’å¯å¤„ç†å†™è¯·æ±‚æ•°ï¼ˆQPSï¼‰: 19.77w
 
-## ²éÑ¯²Ù×÷£¨Search£©
-ÎªÁË±ÜÃâÊµÑéÅ¼È»ÐÔ£ºÊµÑéÁËÊ®´ÎÈ¡Æ½¾ùÖµ£º
-|²éÑ¯Êý¾ÝÊýÄ¿/ÍòÌõ |ºÄÊ±/Ãë | 
+## æŸ¥è¯¢æ“ä½œï¼ˆSearchï¼‰
+ä¸ºäº†é¿å…å®žéªŒå¶ç„¶æ€§ï¼šå®žéªŒäº†åæ¬¡å–å¹³å‡å€¼ï¼š
+|æŸ¥è¯¢æ•°æ®æ•°ç›®/ä¸‡æ¡ |è€—æ—¶/ç§’ | 
 |----|-----------|
 |   10  |   0.468989    |
 |   50  |   2.1963      |
 |   100 |   4.63294     |
 
-Ã¿Ãë¿É´¦Àí¶ÁÇëÇóÊý£¨QPS£©: 21.92w
+æ¯ç§’å¯å¤„ç†è¯»è¯·æ±‚æ•°ï¼ˆQPSï¼‰: 21.92w
 
 
