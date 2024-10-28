@@ -1,9 +1,3 @@
-/* ************************************************************************
-> File Name:     main.cpp
-> Author:        hengzhu
-> Created Time:  2021/4/21
-> Description:   
- ************************************************************************/
 #include <iostream>
 #include <string.h>
 #include "./sklist/skiplist.h"
